@@ -22,7 +22,7 @@ function getCoinbaseTransaction(req, res){
 
   console.log('this is working');
 
-  //res.send(getTransaction);
+  res.send(getTransaction());
 
 }
 

@@ -20,7 +20,9 @@ router.post("/getCoinbaseTransaction", getCoinbaseTransaction);
 
 function getCoinbaseTransaction(req, res){
 
-  res.send(getTransaction);
+  console.log('this is working');
+
+  //res.send(getTransaction);
 
 }
 

@@ -1,25 +1,26 @@
-var express = require('express');
-var app = express();
+
+
+const express = require('express')
+
+const app = express()
+
+app.listen(3000, () => {
+  console.log(`Server running at port 3000`)
+})
 
 var Client = require('coinbase').Client;
 
 var client = new Client({'apiKey': '38NF0D7sLyZsnXEx',
                          'apiSecret': 'AauNuFudPvlLldhafci6l0GalNsW8UCt'});
 
-app.post("/getCoinbaseTransaction", getCoinbaseTransaction);
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
-});
+const router = express.Router() // 1
 
-//const router = require('express').Router();
-
-
-//router.post("/getCoinbaseTransaction", getCoinbaseTransaction);
+router.post("/getCoinbaseTransaction", getCoinbaseTransaction);
 
 function getCoinbaseTransaction(req, res){
 
-  res.resolveAndResponse(getTransaction);
+  res.send(getTransaction);
 
 }
 
@@ -31,3 +32,5 @@ function getTransaction(){
     });
   });
 }
+
+app.use('/', router);

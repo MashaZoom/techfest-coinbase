@@ -1,24 +1,29 @@
 {
   "name": "techfest-coinbase",
-  "version": "0.0.1",
-  "description": "Techfest",
-  "main": "app.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "notifications.js",
+  "scripts": {
+    "start": "node notifications.js"
+  },
   "engines": {
     "node": "8.9.0",
     "npm": "3.10.10"
   },
-
-  "scripts": {
-    "start": "node ${SCRIPT:-app.js}"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MashaZoom/techfest-coinbase.git"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "coinbase": "2.0.8",
     "express": "^4.16.3",
 
   },
-  "devDependencies": {
-
-  }
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MashaZoom/techfest-coinbase/issues"
+  },
+  "homepage": "https://github.com/MashaZoom/techfest-coinbase#readme"
 }

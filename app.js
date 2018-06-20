@@ -28,9 +28,15 @@ function getCoinbaseTransaction(req, res){
 
 function getTransaction(){
   return client.getAccount('da98fb1d-c7f1-563a-941d-ee9c02fd7b6e', function(err, account) {
-    return account.getTransactions(null,function(err, txs) {
-      console.log(txs);
-      return txt;
+    return account.getTransactions(null,function(err, transaction) {
+      console.log(transaction);
+      if(transaction){
+        return transaction;
+      } else {
+        {message: 'there is an error, does not work!'};
+      }
+
+
     });
   });
 }

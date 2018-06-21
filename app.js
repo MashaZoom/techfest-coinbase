@@ -28,7 +28,7 @@ function getCoinbaseTransaction(req, res){
 
 }
 
-const timeInterval = 3000000000;
+const timeInterval = 60000;
 
 function getTransaction(){
 
@@ -50,7 +50,7 @@ function getTransaction(){
               var result = {
                   "status_code":400
               }
-              //if (diff <= timeInterval) {
+              if (diff <= timeInterval) {
                   if (tran.status === 'completed' || tran.status === 'pending'){
                       var result = {
                           "status_code":200,
@@ -60,7 +60,7 @@ function getTransaction(){
                           "usd":tran.native_amount,
                       }
                   }
-              //}
+              }
               return resolve(result);
 
 
